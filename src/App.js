@@ -7,23 +7,11 @@ function App() {
 
   const [mobileMenu, setMobileMenu] = useState(false)
 
-  /*const mobMenu = (e) => {
-    e.preventDefault();
-    if(mobileMenu === false){
-      setMobileMenu(true)
-    }if(mobileMenu === true){
+  const mobMenu = () => {
+    setMobileMenu(!mobileMenu)
+    if(mobileMenu === true){
       setMobileMenu(false)
     }
-  }*/
-
-  const activeMenu = () => {
-    if(mobileMenu === false){
-      setMobileMenu(true)
-    }
-  }
-
-  const closeMenu = () => {
-    setMobileMenu(false)
   }
 
   return (
@@ -42,6 +30,21 @@ function App() {
                 <li>Testimonials</li>
               </ul>
             </nav>
+            <div className={`home-block-left-navigation-nav-mobile ${mobileMenu ? 'inactive' : ''}`} onClick={mobMenu}>
+              <div className='home-block-left-navigation-nav-mobile-navImg'></div>
+            </div>
+            {mobileMenu && (
+              <div className='home-block-left-navigation-nav-mobile-menu'>
+                <div className='home-block-left-navigation-nav-mobile-menu-close' onClick={mobMenu}>X</div>
+                <ul className='home-block-left-navigation-mobile'>
+                  <li><Link>Home</Link></li>
+                  <li><Link>Programs</Link></li>
+                  <li><Link>Why us</Link></li>
+                  <li><Link>Plans</Link></li>
+                  <li><Link>Testimonials</Link></li>
+                </ul>
+              </div>
+            )}
             <div className='home-block-left-slider-box-block'>
               <div className='home-block-left-slider-box'>
                 <div className='home-block-left-slider-box-slider'></div>
