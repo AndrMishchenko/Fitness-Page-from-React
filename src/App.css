@@ -354,11 +354,266 @@
 
 /*programs*/
 .programs-block{
+  position: relative;
   width: 100%;
-  min-height: 900px;
-  border: 1px solid blueviolet;
   margin-top: 100px;
+}
+
+.programs-block-title{
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 60px;
+  text-transform: uppercase;
+  font-weight: 700;
   color: white;
+  transform: skew(-25deg, 0deg);
+  margin: 0 auto;
+}
+
+.programs-block-title p:first-child,
+.programs-block-title p:last-child{
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 1px;
+  color: transparent;
+}
+
+.programs-block-title-blockTraining{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding: 0 20px;
+  gap: 20px;
+}
+
+.programs-block-title-blockTraining-strenght,
+.programs-block-title-blockTraining-cardio,
+.programs-block-title-blockTraining-fatBurning,
+.programs-block-title-blockTraining-healthFitness{
+  width: 350px;
+  height: 350px;
+  background-color: rgb(90, 90, 90);
+  padding: 30px 30px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.programs-block-title-blockTraining-strenght:hover,
+.programs-block-title-blockTraining-cardio:hover,
+.programs-block-title-blockTraining-fatBurning:hover,
+.programs-block-title-blockTraining-healthFitness:hover{
+  background: linear-gradient(to bottom left, rgb(255, 38, 0), rgb(255, 187, 0));
+}
+
+.programs-block-title-blockTraining-strenght-img,
+.programs-block-title-blockTraining-cardio-img,
+.programs-block-title-blockTraining-fatBurning-img,
+.programs-block-title-blockTraining-healthFitness-img{
+  width: 50px;
+  height: 50px;
+}
+
+.programs-block-title-blockTraining-strenght h3,
+.programs-block-title-blockTraining-cardio h3,
+.programs-block-title-blockTraining-fatBurning h3,
+.programs-block-title-blockTraining-healthFitness h3{
+  color: white;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.programs-block-title-blockTraining-strenght p,
+.programs-block-title-blockTraining-cardio p,
+.programs-block-title-blockTraining-fatBurning p,
+.programs-block-title-blockTraining-healthFitness p{
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+
+.programs-block-title-blockTraining-strenght-joined,
+.programs-block-title-blockTraining-cardio-joined,
+.programs-block-title-blockTraining-fatBurning-joined,
+.programs-block-title-blockTraining-healthFitness-joined{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.programs-block-title-blockTraining-strenght-joined p{
+  text-align: start;
+}
+
+.programs-block-title-blockTraining-strenght-arrow,
+.programs-block-title-blockTraining-cardio-arrow,
+.programs-block-title-blockTraining-fatBurning-arrow,
+.programs-block-title-blockTraining-healthFitness-arrow{
+  background-image: url(./components/img/rightArrow.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 20px;
+  width: 20px;
+  margin-top: 3px;
+}
+
+/*why ua*/
+.whyUs-block{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 100px;
+}
+
+.whyUs-block-leftSide{
+  display: flex;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.whyUs-block-leftSide-firstPhoto{
+  background-image: url(./components/img/image1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 200px;
+  height: 580px;
+}
+
+.whyUs-block-leftSide-secondPhoto{
+  background-image: url(./components/img/image2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 570px;
+  height: 300px;
+}
+
+.whyUs-block-leftSide-secondPhoto-block{
+  display: flex;
+  flex-direction: column;
+}
+
+.whyUs-block-leftSide-third-fourthPhoto-block{
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.whyUs-block-leftSide-thirdPhoto{
+  background-image: url(./components/img/image3.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 290px;
+  height: 260px;
+}
+
+.whyUs-block-leftSide-fourthPhoto{
+  background-image: url(./components/img/image4.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 260px;
+  height: 260px;
+}
+
+.whyUs-block-rightSide-preTitle{
+  font-weight: 700;
+  color: rgb(255, 123, 0);
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.whyUs-block-rightSide-title{
+  font-weight: 700;
+  font-size: 60px;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 1px;
+  color: transparent;
+  margin-bottom: 30px;
+}
+
+.whyUs-block-rightSide-title span{
+  color: white;
+}
+
+.whyUs-block-rightSide-firstBenefit,
+.whyUs-block-rightSide-secondBenefit,
+.whyUs-block-rightSide-thirdBenefit,
+.whyUs-block-rightSide-fourthBenefit{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.whyUs-block-rightSide-firstBenefit-img,
+.whyUs-block-rightSide-secondBenefit-img,
+.whyUs-block-rightSide-thirdBenefit-img,
+.whyUs-block-rightSide-fourthBenefit-img{
+  background-image: url(./components/img/tick.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+}
+
+.whyUs-block-rightSide-firstBenefit p,
+.whyUs-block-rightSide-secondBenefit p,
+.whyUs-block-rightSide-thirdBenefit,
+.whyUs-block-rightSide-fourthBenefit p{
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.whyUs-block-rightSide-secondTitle{
+  text-transform: uppercase;
+  color: rgb(100, 100, 100);
+  font-size: 18px;
+}
+
+.whyUs-block-rightSide-partners{
+  display: flex;
+  gap: 20px;
+}
+
+.whyUs-block-rightSide-partners-firtsImg{
+  background-image: url(./components/img/nb.png);
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.whyUs-block-rightSide-partners-secondImg{
+  background-image: url(./components/img/adidas.png);
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.whyUs-block-rightSide-partners-thirdImg{
+  background-image: url(./components/img/nike.png);
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 1440px){
@@ -380,6 +635,17 @@
 }
 .home-block-right-culc-block-diagram-box{
   display: none;
+}
+.programs-block-title-blockTraining-strenght h3,
+.programs-block-title-blockTraining-cardio h3,
+.programs-block-title-blockTraining-fatBurning h3,
+.programs-block-title-blockTraining-healthFitness h3{
+  text-align: center;
+}
+
+/*why us*/
+.whyUs-block-rightSide{
+  margin-left: 20px;
 }
 }
 
@@ -422,6 +688,120 @@
       transform: translate(-50px);
     }
   } 
+
+  /*program*/  
+  .programs-block-title{
+    font-size: 40px;
+  }
+  .programs-block-title-blockTraining-strenght,
+  .programs-block-title-blockTraining-cardio,
+  .programs-block-title-blockTraining-fatBurning,
+  .programs-block-title-blockTraining-healthFitness{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 10px;
+  }
+  .programs-block-title-blockTraining-strenght-img,
+  .programs-block-title-blockTraining-cardio-img,
+  .programs-block-title-blockTraining-fatBurning-img,
+  .programs-block-title-blockTraining-healthFitness-img{
+    width: 40px;
+    height: 40px;
+  }
+  .programs-block-title-blockTraining-strenght h3,
+  .programs-block-title-blockTraining-cardio h3,
+  .programs-block-title-blockTraining-fatBurning h3,
+  .programs-block-title-blockTraining-healthFitness h3{
+    font-size: 18px;
+    text-align: center;
+  }
+  .programs-block-title-blockTraining-strenght p,
+  .programs-block-title-blockTraining-cardio p,
+  .programs-block-title-blockTraining-fatBurning p,
+  .programs-block-title-blockTraining-healthFitness p{
+    color: white;
+    font-size: 16px;
+    text-align: center;
+  }
+  .programs-block-title-blockTraining-strenght-arrow,
+  .programs-block-title-blockTraining-cardio-arrow,
+  .programs-block-title-blockTraining-fatBurning-arrow,
+  .programs-block-title-blockTraining-healthFitness-arrow{
+    background-image: url(./components/img/rightArrow.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+    margin-top: 3px;
+  }
+
+  /*why us*/
+  .whyUs-block-leftSide{
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  .whyUs-block-leftSide-firstPhoto{
+    width: 200px;
+    height: 480px;
+    background-position: 0px -40px
+  }
+  
+  .whyUs-block-leftSide-secondPhoto{
+    width: 400px;
+    height: 240px;
+  }
+  
+  .whyUs-block-leftSide-third-fourthPhoto-block{
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+  }
+  
+  .whyUs-block-leftSide-thirdPhoto,
+  .whyUs-block-leftSide-fourthPhoto{
+    width: 190px;
+    height: 220px;
+  }
+  
+  .whyUs-block-rightSide-preTitle{
+    font-size: 18px;
+  }
+  
+  .whyUs-block-rightSide-title{
+    font-size: 30px;
+  }
+  
+  .whyUs-block-rightSide-firstBenefit-img,
+  .whyUs-block-rightSide-thirdBenefit-img,
+  .whyUs-block-rightSide-secondBenefit-img,
+  .whyUs-block-rightSide-fourthBenefit-img{
+    width: 25px;
+    height: 25px;
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .whyUs-block-rightSide-firstBenefit p,
+  .whyUs-block-rightSide-secondBenefit p,
+  .whyUs-block-rightSide-thirdBenefit p,
+  .whyUs-block-rightSide-fourthBenefit p{
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .whyUs-block-rightSide-secondTitle{
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 770px){
@@ -531,6 +911,103 @@
   .home-block-right-btn{
     top: 90px;
   }
+
+  /*programs*/  
+  .programs-block-title{
+    font-size: 30px;
+  }
+  .programs-block-title-blockTraining{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .programs-block-title-blockTraining-strenght,
+  .programs-block-title-blockTraining-cardio,
+  .programs-block-title-blockTraining-fatBurning,
+  .programs-block-title-blockTraining-healthFitness{
+    width: 350px;
+    height: 350px;
+    background-color: rgb(90, 90, 90);
+    padding: 30px 30px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  .programs-block-title-blockTraining-strenght-img,
+  .programs-block-title-blockTraining-cardio-img,
+  .programs-block-title-blockTraining-fatBurning-img,
+  .programs-block-title-blockTraining-healthFitness-img{
+    width: 50px;
+    height: 50px;
+  }
+  .programs-block-title-blockTraining-strenght h3,
+  .programs-block-title-blockTraining-cardio h3,
+  .programs-block-title-blockTraining-fatBurning h3,
+  .programs-block-title-blockTraining-healthFitness h3{
+    color: white;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 25px;
+  }
+  .programs-block-title-blockTraining-strenght p,
+  .programs-block-title-blockTraining-cardio p,
+  .programs-block-title-blockTraining-fatBurning p,
+  .programs-block-title-blockTraining-healthFitness p{
+    color: white;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  /*why us*/
+  .whyUs-block{
+    display: flex;
+    flex-direction: column;
+  }  
+  .whyUs-block-leftSide-firstPhoto{
+    width: 220px;
+    height: 580px;
+    background-position: 0 -40px;
+  }
+  .whyUs-block-leftSide-secondPhoto{
+    width: 490px;
+    height: 300px;
+  }
+  .whyUs-block-leftSide-thirdPhoto{
+    width: 235px;
+    height: 260px;
+  }
+  .whyUs-block-leftSide-fourthPhoto{
+    width: 235px;
+    height: 260px;
+  }
+  .whyUs-block-rightSide-preTitle{
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .whyUs-block-rightSide-title{
+    font-size: 60px;
+    text-align: center;
+  }
+  .whyUs-block-rightSide-title span{
+    color: white;
+  }
+  .whyUs-block-rightSide-firstBenefit-img,
+  .whyUs-block-rightSide-secondBenefit-img,
+  .whyUs-block-rightSide-thirdBenefit-img,
+  .whyUs-block-rightSide-fourthBenefit-img{
+    width: 30px;
+    height: 30px;
+  }
+  .whyUs-block-rightSide-firstBenefit p,
+  .whyUs-block-rightSide-secondBenefit p,
+  .whyUs-block-rightSide-thirdBenefit p,
+  .whyUs-block-rightSide-fourthBenefit p{
+    font-size: 18px;
+  }
+  .whyUs-block-rightSide-secondTitle{
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 450px){
@@ -540,7 +1017,7 @@
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
-    top: 15%;
+    top: 5%;
   }
   .home-block-left-navigation-nav{
     display: none;
@@ -549,15 +1026,15 @@
     display: block;
     width: 50px;
     height: 50px;
-    background-color: #333;
-    position: sticky;
-    position: absolute;
+    background-color: rgb(29, 29, 29);
+    position: fixed;
     top: 20px;
     right: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+    z-index: 10000;
   }
   .inactive{
     display: none;
@@ -574,7 +1051,8 @@
     display: block;
     width: 150px;
     height: 280px;
-    background-color: #333;
+    opacity: 0.9;
+    background-color: rgb(29, 29, 29);
     position: fixed;
     right: 20px;
     top: 30px;
@@ -653,8 +1131,6 @@
     height: 50px;
     font-size: 18px;
   }
-
-
   .home-block-right-man-back{
     width: 250px;
     height: 500px;
@@ -672,9 +1148,16 @@
     left: 50%;
     top: 40%;
   }
-  .home-block-right-culc-block-diagram-box,
   .home-block-right-btn-scoreboard{
-    display: none;
+    transform: translate(-50%, -50%);
+    top: 75%;
+    left: 50%;
+    animation: none;
+  }
+  .home-block-right-culc-block-diagram-box{
+    transform: translate(-50%, -50%);
+    top: 92%;
+    left: 50%;
   }
   @keyframes slider{
     0%{
@@ -684,4 +1167,73 @@
       transform: translate(-209px);
     }
   }
+
+  /*programs*/
+  .programs-block-title{
+    width: 85%;
+    font-size: 25px;
+    text-align: center;
+    flex-direction: column;
+  }  
+  .programs-block-title-blockTraining-strenght,
+  .programs-block-title-blockTraining-cardio,
+  .programs-block-title-blockTraining-fatBurning,
+  .programs-block-title-blockTraining-healthFitness{
+    width: 90%;
+    height: 450px;
+  }
+
+  /*why us*/
+  .whyUs-block-leftSide-firstPhoto{
+    background-size: cover;
+    background-position: 0, -20px;
+    width: 130px;
+    height: 350px;
+  }
+  .whyUs-block-leftSide-secondPhoto{
+    background-size: cover;
+    width: 240px;
+    height: 180px;
+  }
+  .whyUs-block-leftSide-secondPhoto-block{
+    display: flex;
+    flex-direction: column;
+  }
+  .whyUs-block-leftSide-thirdPhoto{
+    background-position: -40px;
+    width: 110px;
+    height: 150px;
+  }
+  .whyUs-block-leftSide-fourthPhoto{
+    background-position: center;
+    width: 110px;
+    height: 150px;
+  }
+  .whyUs-block-rightSide-preTitle{
+    font-size: 18px;
+  } 
+  .whyUs-block-rightSide-title{
+    font-size: 30px;
+  }
+  .whyUs-block-rightSide-firstBenefit p,
+  .whyUs-block-rightSide-secondBenefit p,
+  .whyUs-block-rightSide-thirdBenefit p,
+  .whyUs-block-rightSide-fourthBenefit p{
+    padding: 0 10px 0 0;
+    font-size: 14px;
+  }
+  .whyUs-block-rightSide-secondBenefit p{
+    margin-top: -3px;
+  }
+  .whyUs-block-rightSide-secondTitle{
+    font-size: 16px;
+    text-align: center;
+  }
+  .whyUs-block-rightSide-partners{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  
 }

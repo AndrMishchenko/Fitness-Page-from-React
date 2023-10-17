@@ -2,6 +2,10 @@ import './App.css';
 import { Link, Element} from 'react-scroll';
 import { useState } from 'react';
 import CountUp from 'react-countup';
+import dumbell from './components/img/dumbell.svg';
+import runing from './components/img/runing.svg';
+import flame from './components/img/flame.svg';
+import heart from './components/img/heartHealth.svg';
 
 function App() { 
 
@@ -18,100 +22,188 @@ function App() {
       <div className='wrapper'>
         <div className='spot'></div>
 
-        <div className='home-block'>
-          <div className='home-block-left'>
-            <nav className='home-block-left-navigation'>
-              <div className='home-block-left-navigation-img'></div>
-              <ul className='home-block-left-navigation-nav'>
-                <li><Link to="section1" spy={true} smooth={true} offset={-70} duration={500}>Home</Link></li>
-                <li><Link to="section2" spy={true} smooth={true} offset={-70} duration={500}>Programs</Link></li>
-                <li>Why us</li>
-                <li>Plans</li>
-                <li>Testimonials</li>
-              </ul>
-            </nav>
-            <div className={`home-block-left-navigation-nav-mobile ${mobileMenu ? 'inactive' : ''}`} onClick={mobMenu}>
-              <div className='home-block-left-navigation-nav-mobile-navImg'></div>
-            </div>
-            {mobileMenu && (
-              <div className='home-block-left-navigation-nav-mobile-menu'>
-                <div className='home-block-left-navigation-nav-mobile-menu-close' onClick={mobMenu}>X</div>
-                <ul className='home-block-left-navigation-mobile'>
-                  <li><Link>Home</Link></li>
-                  <li><Link>Programs</Link></li>
-                  <li><Link>Why us</Link></li>
-                  <li><Link>Plans</Link></li>
-                  <li><Link>Testimonials</Link></li>
+        <Element name='section1'>
+          <div className='home-block'>
+            <div className='home-block-left'>
+              <nav className='home-block-left-navigation'>
+                <div className='home-block-left-navigation-img'></div>
+                <ul className='home-block-left-navigation-nav'>
+                  <li><Link to="section1" spy={true} smooth={true} offset={-70} duration={500}>Home</Link></li>
+                  <li><Link to="section2" spy={true} smooth={true} offset={-70} duration={500}>Programs</Link></li>
+                  <li>Why us</li>
+                  <li>Plans</li>
+                  <li>Testimonials</li>
                 </ul>
+              </nav>
+              <div className={`home-block-left-navigation-nav-mobile ${mobileMenu ? 'inactive' : ''}`} onClick={mobMenu}>
+                <div className='home-block-left-navigation-nav-mobile-navImg'></div>
               </div>
-            )}
-            <div className='home-block-left-slider-box-block'>
-              <div className='home-block-left-slider-box'>
-                <div className='home-block-left-slider-box-slider'></div>
-                <p>the best fitness club in the town</p>
+              {mobileMenu && (
+                <div className='home-block-left-navigation-nav-mobile-menu'>
+                  <div className='home-block-left-navigation-nav-mobile-menu-close' onClick={mobMenu}>X</div>
+                  <ul className='home-block-left-navigation-mobile'>
+                    <li><Link to="section1" spy={true} smooth={true} offset={-70} duration={500}>Home</Link></li>
+                    <li><Link to="section2" spy={true} smooth={true} offset={-70} duration={500}>Programs</Link></li>
+                    <li><Link>Why us</Link></li>
+                    <li><Link>Plans</Link></li>
+                    <li><Link>Testimonials</Link></li>
+                  </ul>
+                </div>
+              )}
+              <div className='home-block-left-slider-box-block'>
+                <div className='home-block-left-slider-box'>
+                  <div className='home-block-left-slider-box-slider'></div>
+                  <p>the best fitness club in the town</p>
+                </div>
               </div>
-            </div>
-            <div className='home-block-left-title-block'>
-              <div>
-                <span className='home-block-left-title-block-first-string'>shape</span>
-                <span className='home-block-left-title-block-second-string'> your</span>
+              <div className='home-block-left-title-block'>
+                <div>
+                  <span className='home-block-left-title-block-first-string'>shape</span>
+                  <span className='home-block-left-title-block-second-string'> your</span>
+                </div>
+                <div>
+                  <p className='home-block-left-title-block-third-string'>ideal body</p>
+                </div>
+                <div className='home-block-left-title-block-fourth-string'>In here we will help you to shape and build your ideal body and live up your life to fullset </div>
               </div>
-              <div>
-                <p className='home-block-left-title-block-third-string'>ideal body</p>
-              </div>
-              <div className='home-block-left-title-block-fourth-string'>In here we will help you to shape and build your ideal body and live up your life to fullset </div>
-            </div>
-            <div className='home-block-left-culc-block'>
-              <div>
-                <p className='home-block-left-culc-block-numbers'>+ <CountUp start={100} end={138} duration={5}/></p>
-                <p className='home-block-left-culc-block-text'>Expert coaches</p>
-              </div>
-              <div>
-                <p className='home-block-left-culc-block-numbers'>+ <CountUp start={920} end={978} duration={5}/></p>
-                <p className='home-block-left-culc-block-text'>members joined</p>
-              </div>
-              <div>
-                <p className='home-block-left-culc-block-numbers'>+ <CountUp start={25} end={50} duration={5}/></p>
-                <p className='home-block-left-culc-block-text'>fitness program</p>
-              </div>
-              <div className='home-block-left-culc-block-diagram'>
-                <div className='home-block-left-culc-block-diagram-box'>
-                  <div className='home-block-left-culc-block-diagram-box-img'></div>
-                  <div className='home-block-left-culc-block-diagram-box-info'>
-                    <p className='home-block-left-culc-block-diagram-box-info-title'>Calories burned</p>
-                    <p className='home-block-left-culc-block-diagram-box-info-text'>220 kcal</p>
+              <div className='home-block-left-culc-block'>
+                <div>
+                  <p className='home-block-left-culc-block-numbers'>+ <CountUp start={100} end={138} duration={5}/></p>
+                  <p className='home-block-left-culc-block-text'>Expert coaches</p>
+                </div>
+                <div>
+                  <p className='home-block-left-culc-block-numbers'>+ <CountUp start={920} end={978} duration={5}/></p>
+                  <p className='home-block-left-culc-block-text'>members joined</p>
+                </div>
+                <div>
+                  <p className='home-block-left-culc-block-numbers'>+ <CountUp start={25} end={50} duration={5}/></p>
+                  <p className='home-block-left-culc-block-text'>fitness program</p>
+                </div>
+                <div className='home-block-left-culc-block-diagram'>
+                  <div className='home-block-left-culc-block-diagram-box'>
+                    <div className='home-block-left-culc-block-diagram-box-img'></div>
+                    <div className='home-block-left-culc-block-diagram-box-info'>
+                      <p className='home-block-left-culc-block-diagram-box-info-title'>Calories burned</p>
+                      <p className='home-block-left-culc-block-diagram-box-info-text'>220 kcal</p>
+                    </div>
                   </div>
                 </div>
               </div>
+              <div className='home-block-left-btn'>
+                <button className='home-block-left-btn-first'>Get Started</button>
+                <button className='home-block-left-btn-right'>Learn More</button>
+              </div>
             </div>
-            <div className='home-block-left-btn'>
-              <button className='home-block-left-btn-first'>Get Started</button>
-              <button className='home-block-left-btn-right'>Learn More</button>
-            </div>
-          </div>
 
-          <div className='home-block-right'>
-            <button className='home-block-right-btn'>Join Now</button>
-            <div className='home-block-right-culc-block-diagram-box'>
-                  <div className='home-block-right-culc-block-diagram-box-img'></div>
-                  <div className='home-block-right-culc-block-diagram-box-info'>
-                    <p className='home-block-right-culc-block-diagram-box-info-title'>Calories burned</p>
-                    <p className='home-block-right-culc-block-diagram-box-info-text'>220 kcal</p>
+            <div className='home-block-right'>
+              <button className='home-block-right-btn'>Join Now</button>
+              <div className='home-block-right-culc-block-diagram-box'>
+                    <div className='home-block-right-culc-block-diagram-box-img'></div>
+                    <div className='home-block-right-culc-block-diagram-box-info'>
+                      <p className='home-block-right-culc-block-diagram-box-info-title'>Calories burned</p>
+                      <p className='home-block-right-culc-block-diagram-box-info-text'>220 kcal</p>
+                    </div>
                   </div>
-                </div>
-            <div className='home-block-right-btn-scoreboard'>
-              <div className='home-block-right-btn-scoreboard-heart'></div>
-              <p className='home-block-right-btn-scoreboard-heart-title'>Heart Rate</p>
-              <p className='home-block-right-btn-scoreboard-heart-current'>116 bpm</p>
+              <div className='home-block-right-btn-scoreboard'>
+                <div className='home-block-right-btn-scoreboard-heart'></div>
+                <p className='home-block-right-btn-scoreboard-heart-title'>Heart Rate</p>
+                <p className='home-block-right-btn-scoreboard-heart-current'>116 bpm</p>
+              </div>
+              <div className='home-block-right-man'></div>
+              <div className='home-block-right-man-back'></div>
             </div>
-            <div className='home-block-right-man'></div>
-            <div className='home-block-right-man-back'></div>
           </div>
-        </div>
+        </Element>
 
-        {/*<Element name='section2'>
-          <div className='programs-block'>programs</div>
-  </Element>*/}
+        <Element name='section2'>
+          <div className='programs-block'>
+            <div className='programs-block-title'>
+              <p>explore our</p>
+              <p>programs</p>
+              <p>to shape you</p>
+            </div>
+            <div className='programs-block-title-blockTraining'>
+              <div className='programs-block-title-blockTraining-strenght'>
+                <img className='programs-block-title-blockTraining-strenght-img' src={dumbell}></img>
+                <h3>Strenght Training</h3>
+                <p>In this program you are trained to improve your strenght through many exercises.</p>
+                <div className='programs-block-title-blockTraining-strenght-joined'>
+                  <p>Join Now</p>
+                  <div className='programs-block-title-blockTraining-strenght-arrow'></div>
+                </div>
+              </div>
+              <div className='programs-block-title-blockTraining-cardio'>
+                <img className='programs-block-title-blockTraining-cardio-img' src={runing}></img>
+                <h3>Cardio Training</h3>
+                <p>In this program you are trained to do sequential moves in rabge of 20 until 30 minutes.</p>
+                <div className='programs-block-title-blockTraining-cardio-joined'>
+                  <p>Join Now</p>
+                  <div className='programs-block-title-blockTraining-cardio-arrow'></div>
+                </div>
+              </div>
+              <div className='programs-block-title-blockTraining-fatBurning'>
+                <img className='programs-block-title-blockTraining-fatBurning-img' src={flame}></img>
+                <h3>Fat Burning</h3>
+                <p>This program is suitable for you who wants to get rid of your fat and lose their weight.</p>
+                <div className='programs-block-title-blockTraining-fatBurning-joined'>
+                  <p>Join Now</p>
+                  <div className='programs-block-title-blockTraining-fatBurning-arrow'></div>
+                </div>
+              </div>
+              <div className='programs-block-title-blockTraining-healthFitness'>
+                <img className='programs-block-title-blockTraining-healthFitness-img' src={heart}></img>
+                <h3>Health Fitness</h3>
+                <p>This programs is designed for those who exercises only for their body fitness not body building.</p>
+                <div className='programs-block-title-blockTraining-healthFitness-joined'>
+                  <p>Join Now</p>
+                  <div className='programs-block-title-blockTraining-healthFitness-arrow'></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Element>
+
+        <Element name='section 3'>
+          <div className='whyUs-block'>
+            <div className='whyUs-block-leftSide'>
+              <div className='whyUs-block-leftSide-firstPhoto'></div>
+              <div className='whyUs-block-leftSide-secondPhoto-block'>
+                <div className='whyUs-block-leftSide-secondPhoto'></div>
+                <div className='whyUs-block-leftSide-third-fourthPhoto-block'>
+                  <div className='whyUs-block-leftSide-thirdPhoto'></div>
+                  <div className='whyUs-block-leftSide-fourthPhoto'></div>
+                </div>
+              </div>
+            </div>
+
+            <div className='whyUs-block-rightSide'>
+              <p className='whyUs-block-rightSide-preTitle'>some reason</p>
+              <h3 className='whyUs-block-rightSide-title'>WHY <span>CHOOSE US</span></h3>
+              <div className='whyUs-block-rightSide-firstBenefit'>
+                <div className='whyUs-block-rightSide-firstBenefit-img'></div>
+                <p>over 140+ expert coachs</p>
+              </div>
+              <div className='whyUs-block-rightSide-secondBenefit'>
+                <div className='whyUs-block-rightSide-secondBenefit-img'></div>
+                <p>train smarter and faster than before</p>
+              </div>
+              <div className='whyUs-block-rightSide-thirdBenefit'>
+                <div className='whyUs-block-rightSide-thirdBenefit-img'></div>
+                <p>1 free program for new member</p>
+              </div>
+              <div className='whyUs-block-rightSide-fourthBenefit'>
+                <div className='whyUs-block-rightSide-fourthBenefit-img'></div>
+                <p>reliable partners</p>
+              </div>
+              <div className='whyUs-block-rightSide-secondTitle'>our partners</div>
+              <div className='whyUs-block-rightSide-partners'>
+                <div className='whyUs-block-rightSide-partners-firtsImg'></div>
+                <div className='whyUs-block-rightSide-partners-secondImg'></div>
+                <div className='whyUs-block-rightSide-partners-thirdImg'></div>
+              </div>
+            </div>
+          </div>
+        </Element>
 
       </div>
   );
