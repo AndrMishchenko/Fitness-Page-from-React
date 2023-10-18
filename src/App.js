@@ -6,10 +6,19 @@ import dumbell from './components/img/dumbell.svg';
 import runing from './components/img/runing.svg';
 import flame from './components/img/flame.svg';
 import heart from './components/img/heartHealth.svg';
+import basicPlanImg from './components/img/heartTower.svg';
+import premiumPlanImg from './components/img/crown.svg';
+import proPlanImg from './components/img/firstPosition.svg'
+import { useEffect } from 'react';
 
 function App() { 
 
-  const [mobileMenu, setMobileMenu] = useState(false)
+  const [mobileMenu, setMobileMenu] = useState(false);
+
+  const [trainingPlan, setTrainingPlan] = useState('monthly');
+  const [basicPlan, setBasicPlan] = useState(0);
+  const [premiumPlan, setPremiumPlan] = useState(0);
+  const [proPlan, setProPlan] = useState(0);
 
   const mobMenu = () => {
     setMobileMenu(!mobileMenu)
@@ -17,6 +26,25 @@ function App() {
       setMobileMenu(false)
     }
   }
+
+  const changeTrainingPlan = () => {
+    setTrainingPlan('yearly')
+    if(trainingPlan === 'yearly'){
+      setTrainingPlan('monthly')
+    }
+  }
+
+  useEffect(() => {
+    if(trainingPlan === 'monthly'){
+      setBasicPlan(25)
+      setPremiumPlan(30)
+      setProPlan(45)
+    }else{
+      setBasicPlan(300)
+      setPremiumPlan(330)
+      setProPlan(495)
+    }
+  })
 
   return (
       <div className='wrapper'>
@@ -30,7 +58,7 @@ function App() {
                 <ul className='home-block-left-navigation-nav'>
                   <li><Link to="section1" spy={true} smooth={true} offset={-70} duration={500}>Home</Link></li>
                   <li><Link to="section2" spy={true} smooth={true} offset={-70} duration={500}>Programs</Link></li>
-                  <li>Why us</li>
+                  <li><Link to="section3" spy={true} smooth={true} offset={-70} duration={500}>Why us</Link></li>
                   <li>Plans</li>
                   <li>Testimonials</li>
                 </ul>
@@ -44,7 +72,7 @@ function App() {
                   <ul className='home-block-left-navigation-mobile'>
                     <li><Link to="section1" spy={true} smooth={true} offset={-70} duration={500}>Home</Link></li>
                     <li><Link to="section2" spy={true} smooth={true} offset={-70} duration={500}>Programs</Link></li>
-                    <li><Link>Why us</Link></li>
+                    <li><Link to="section3" spy={true} smooth={true} offset={-70} duration={500}>Why us</Link></li>
                     <li><Link>Plans</Link></li>
                     <li><Link>Testimonials</Link></li>
                   </ul>
@@ -205,6 +233,124 @@ function App() {
           </div>
         </Element>
 
+        <Element name='section4'>
+          <div className='plans-block'>
+            <div className='plans-block-title'>
+              <p>ready to start</p>
+              <p>your journey</p>
+              <p>now withus</p>
+            </div>
+            <div className='plans-block-selectedTimeline'>
+              <p 
+                className={`plans-block-selectedTimeline-monthly ${trainingPlan === 'monthly' ? 'act' : 'notActive'}`}
+                onClick={changeTrainingPlan}
+              >Monthly</p>
+              <div className='plans-block-selectedTimeline-blockSlider'>
+                <div className={`plans-block-selectedTimeline-blockSlider-dot ${trainingPlan === 'monthly' ? 'dotActive' : 'dotInactive'}`}></div>
+              </div>
+              <p 
+                className={`plans-block-selectedTimeline-monthly ${trainingPlan === 'yearly' ? 'act' : 'notActive'}`}
+                onClick={changeTrainingPlan}
+              >Yearly</p>
+            </div>
+            <div className='plans-block-backgroundSpot'>
+              <div className='plans-block-backgroundSpot-first'></div>
+              <div className='plans-block-backgroundSpot-second'></div>
+            </div>
+            <div className='plans-block-price'>
+              <div className='plans-block-price-basic'>
+                <img src={basicPlanImg}></img>
+                <h4>basic plan</h4>
+                <h2>$ {basicPlan}</h2>
+                  <div className='plans-block-price-basic-firstStroke'>
+                    <div className='check'></div>
+                    <div className='text'>2 hours of excercises</div>
+                  </div>
+                  <div className='plans-block-price-basic-secondStroke'>
+                    <div className='check'></div>
+                    <div className='text'>Free consulatation to coaches</div>
+                  </div>
+                  <div className='plans-block-price-basic-thirdStroke'>
+                    <div className='check'></div>
+                    <div className='text'>Access to The Community</div>
+                  </div>
+                  <div>
+                  {trainingPlan === 'yearly' ? 
+                    <div className='plans-block-price-basic-fourthStroke'>
+                      <div className='check'></div>
+                      <div className='text'>1 month free</div>
+                    </div> : ''
+                  }
+                    <div>See more benefits</div>
+                    <div></div>
+                  </div>
+                  
+                  <button>Join now</button>
+              </div>
+              <div className='plans-block-price-premium'>
+                <img src={premiumPlanImg}></img>
+                <h4>premium plan</h4>
+                <h2>$ {premiumPlan}</h2>
+                  <div className='plans-block-price-premium-firstStroke'>
+                    <div className='check'></div>
+                    <div className='text'>5 hours of excercises</div>
+                  </div>
+                  <div className='plans-block-price-premium-secondStroke'>
+                    <div className='check'></div>
+                    <div className='text'>Free consulatation to coaches</div>
+                  </div>
+                  <div className='plans-block-price-premium-thirdStroke'>
+                    <div className='check'></div>
+                    <div className='text'>Access to minibar</div>
+                  </div>
+                  {trainingPlan === 'yearly' ? 
+                    <div className='plans-block-price-premium-fourthStroke'>
+                      <div className='check'></div>
+                      <div className='text'>1 month free</div>
+                    </div> : ''
+                  }
+                  <div>
+                    <div>See more benefits</div>
+                    <div></div>
+                  </div>
+                  <button>Join now</button>
+              </div>
+              <div className='plans-block-price-pro'>
+                <img src={proPlanImg}></img>
+                <h4>pro plan</h4>
+                <h2>$ {proPlan}</h2>
+                  <div className='plans-block-price-pro-firstStroke'>
+                    <div className='check'></div>
+                    <div className='text'>8 hours of excercises</div>
+                  </div>
+                  <div className='plans-block-price-pro-secondStroke'>
+                    <div className='check'></div>
+                    <div className='text'>Consulatation of private coach</div>
+                  </div>
+                  <div className='plans-block-price-pro-thirdStroke'>
+                    <div className='check'></div>
+                    <div className='text'>Free fitness merchandise</div>
+                  </div>
+                  {trainingPlan === 'yearly' ? 
+                    <div className='plans-block-price-pro-fourthStroke'>
+                      <div className='check'></div>
+                      <div className='text'>1 month free</div>
+                    </div> : ''
+                  }
+                  <div>
+                    <div>See more benefits</div>
+                    <div></div>
+                  </div>
+                  <button>Join now</button>
+              </div>
+            </div>
+          </div>
+        </Element>
+
+        <Element name='section5'>
+          <div>kjl</div>
+        </Element>
+        
       </div>
   );
 }
