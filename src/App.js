@@ -351,6 +351,9 @@ function App() {
           <div>kjl</div>
         </Element>
         
+        <Element name='section6'>
+          <div>df</div>
+        </Element>
       </div>
   );
 }
