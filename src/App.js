@@ -20,6 +20,8 @@ function App() {
   const [premiumPlan, setPremiumPlan] = useState(0);
   const [proPlan, setProPlan] = useState(0);
 
+  const [comment, setComment] = useState('Methew')
+
   const mobMenu = () => {
     setMobileMenu(!mobileMenu)
     if(mobileMenu === true){
@@ -27,7 +29,8 @@ function App() {
     }
   }
 
-  const changeTrainingPlan = () => {
+  const changeTrainingPlan = (e) => {
+    e.preventDefault();
     setTrainingPlan('yearly')
     if(trainingPlan === 'yearly'){
       setTrainingPlan('monthly')
@@ -46,6 +49,24 @@ function App() {
     }
   })
 
+  const next = () => {
+    if(comment === 'Methew'){
+      setComment('John')
+    }
+    if(comment === 'John'){
+      setComment('Franklin')
+    }
+  }
+
+  const back = () => {
+    if(comment === 'John'){
+      setComment('Methew')
+    }
+    if(comment === 'Franklin'){
+      setComment('John')
+    }
+  }
+
   return (
       <div className='wrapper'>
         <div className='spot'></div>
@@ -59,7 +80,7 @@ function App() {
                   <li><Link to="section1" spy={true} smooth={true} offset={-70} duration={500}>Home</Link></li>
                   <li><Link to="section2" spy={true} smooth={true} offset={-70} duration={500}>Programs</Link></li>
                   <li><Link to="section3" spy={true} smooth={true} offset={-70} duration={500}>Why us</Link></li>
-                  <li>Plans</li>
+                  <li><Link to="section4" spy={true} smooth={true} offset={-70} duration={500}>Plans</Link></li>
                   <li>Testimonials</li>
                 </ul>
               </nav>
@@ -70,10 +91,10 @@ function App() {
                 <div className='home-block-left-navigation-nav-mobile-menu'>
                   <div className='home-block-left-navigation-nav-mobile-menu-close' onClick={mobMenu}>X</div>
                   <ul className='home-block-left-navigation-mobile'>
-                    <li><Link to="section1" spy={true} smooth={true} offset={-70} duration={500}>Home</Link></li>
-                    <li><Link to="section2" spy={true} smooth={true} offset={-70} duration={500}>Programs</Link></li>
-                    <li><Link to="section3" spy={true} smooth={true} offset={-70} duration={500}>Why us</Link></li>
-                    <li><Link>Plans</Link></li>
+                    <li><Link to="section1" spy={true} smooth={true} offset={-70} duration={1000}>Home</Link></li>
+                    <li><Link to="section2" spy={true} smooth={true} offset={-70} duration={1000}>Programs</Link></li>
+                    <li><Link to="section3" spy={true} smooth={true} offset={-70} duration={1000}>Why us</Link></li>
+                    <li><Link to="section4" spy={true} smooth={true} offset={-70} duration={1000}>Plans</Link></li>
                     <li><Link>Testimonials</Link></li>
                   </ul>
                 </div>
@@ -191,7 +212,7 @@ function App() {
           </div>
         </Element>
 
-        <Element name='section 3'>
+        <Element name='section3'>
           <div className='whyUs-block'>
             <div className='whyUs-block-leftSide'>
               <div className='whyUs-block-leftSide-firstPhoto'></div>
@@ -249,7 +270,7 @@ function App() {
                 <div className={`plans-block-selectedTimeline-blockSlider-dot ${trainingPlan === 'monthly' ? 'dotActive' : 'dotInactive'}`}></div>
               </div>
               <p 
-                className={`plans-block-selectedTimeline-monthly ${trainingPlan === 'yearly' ? 'act' : 'notActive'}`}
+                className={`plans-block-selectedTimeline-yearly ${trainingPlan === 'yearly' ? 'act' : 'notActive'}`}
                 onClick={changeTrainingPlan}
               >Yearly</p>
             </div>
@@ -275,17 +296,18 @@ function App() {
                     <div className='text'>Access to The Community</div>
                   </div>
                   <div>
-                  {trainingPlan === 'yearly' ? 
-                    <div className='plans-block-price-basic-fourthStroke'>
-                      <div className='check'></div>
-                      <div className='text'>1 month free</div>
-                    </div> : ''
-                  }
-                    <div>See more benefits</div>
-                    <div></div>
+                    {trainingPlan === 'yearly' ? 
+                      <div className='plans-block-price-basic-fourthStroke'>
+                        <div className='check'></div>
+                        <div className='text'>1 month free</div>
+                      </div> : ''
+                    }
+                    <div className='plans-block-benefits'>
+                      <div>See more benefits</div>
+                      <div className='plans-block-benefits-arrow'></div>
+                    </div>
                   </div>
-                  
-                  <button>Join now</button>
+                <button className='plans-block-btn'>Join now</button>
               </div>
               <div className='plans-block-price-premium'>
                 <img src={premiumPlanImg}></img>
@@ -309,11 +331,11 @@ function App() {
                       <div className='text'>1 month free</div>
                     </div> : ''
                   }
-                  <div>
+                  <div className='plans-block-benefits'>
                     <div>See more benefits</div>
-                    <div></div>
+                    <div className='plans-block-benefits-arrow'></div>
                   </div>
-                  <button>Join now</button>
+                  <button className='plans-block-btn'>Join now</button>
               </div>
               <div className='plans-block-price-pro'>
                 <img src={proPlanImg}></img>
@@ -337,23 +359,106 @@ function App() {
                       <div className='text'>1 month free</div>
                     </div> : ''
                   }
-                  <div>
+                  <div className='plans-block-benefits'>
                     <div>See more benefits</div>
-                    <div></div>
+                    <div className='plans-block-benefits-arrow'></div>
                   </div>
-                  <button>Join now</button>
+                  <button className='plans-block-btn'>Join now</button>
               </div>
             </div>
           </div>
         </Element>
 
         <Element name='section5'>
-          <div>kjl</div>
+          <div className='testimonials-block'>
+          <div className='testimonials-block-preTitle'>testimonials</div>
+          <div className='testimonials-block-box'>
+            <div className='testimonials-block-box-leftSide'>
+              <h3>what they</h3>
+              <h3>say about us</h3>
+              {comment === 'Methew' && (
+                <>
+                  <p className='testimonials-block-box-leftSide-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nihil doloremque amet.</p>
+                  <p className='testimonials-block-box-leftSide-human'><span>mathew hendrickson</span> - entrepreneur</p>  
+                  <div className='testimonials-block-line-first'></div>
+                </>
+              )}
+              {comment === 'John' && (
+                <>
+                  <p className='testimonials-block-box-leftSide-text'>Iure aut excepturi commodi ipsa laborum. Deserunt molestiae, non nemo repudiandae soluta quisquam error.</p>
+                  <p className='testimonials-block-box-leftSide-human'><span>john kevin</span> - coach</p>  
+                  <div className='testimonials-block-line-second'></div>
+                </>
+              )}
+              {comment === 'Franklin' && (
+                <>
+                  <p className='testimonials-block-box-leftSide-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nemo repudiandae soluta quisquam error.</p>
+                  <p className='testimonials-block-box-leftSide-human'><span>Franklin</span> - customer</p>  
+                  <div className='testimonials-block-line-third'></div>
+                </>
+              )}
+            </div>
+            <div className='testimonials-block-box-rightSide'>
+              <div className='testimonials-block-box-rightSide-nav-box'>
+                <div className='testimonials-block-box-rightSide-nav'>
+                  <div onClick={back}></div>
+                  <div onClick={next}></div>
+                </div>
+              </div>
+              {comment === 'Methew' && (
+                <>
+                  <div className='testimonials-block-box-rightSide-borderBox'>
+                    <div className='testimonials-block-box-rightSide-borderBox-border'></div>
+                    <div className='testimonials-block-box-rightSide-borderBox-main'></div>
+                    <div className='testimonials-block-box-rightSide-borderBox-humanFirst'></div>
+                  </div>
+                </>
+              )}
+              {comment === 'John' && (
+                <>
+                  <div className='testimonials-block-box-rightSide-borderBox'>
+                    <div className='testimonials-block-box-rightSide-borderBox-border'></div>
+                    <div className='testimonials-block-box-rightSide-borderBox-main'></div>
+                    <div className='testimonials-block-box-rightSide-borderBox-humanSecond'></div>
+                  </div>
+                </>
+              )}
+              {comment === 'Franklin' && (
+                <>
+                  <div className='testimonials-block-box-rightSide-borderBox'>
+                    <div className='testimonials-block-box-rightSide-borderBox-border'></div>
+                    <div className='testimonials-block-box-rightSide-borderBox-main'></div>
+                    <div className='testimonials-block-box-rightSide-borderBox-humanThird'></div>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+          <div className='testimonials-block-email'>
+            <div>
+              <p className='testimonials-block-email-firstStroke'><span>ready to </span>level up</p>
+              <p className='testimonials-block-email-secondStroke'>your body <span>with us?</span></p>
+            </div>
+            <div className='testimonials-block-email-box'>
+              <input
+                className='testimonials-block-email-box-input'
+                placeholder='Enter your Email address her'
+              ></input>
+              <button className='testimonials-block-email-box-btn'>Join now</button>
+            </div>
+          </div>
+          </div>
         </Element>
+        <div className='testimonials-block-line'></div>
         
-        <Element name='section6'>
-          <div>df</div>
-        </Element>
+      <footer className='footer'>
+        <div className='footer-blockImg'>
+          <div className='footer-blockImg-first'></div>
+          <div className='footer-blockImg-second'></div>
+          <div className='footer-blockImg-third'></div>
+        </div>
+        <div className='footer-logo'></div>
+      </footer>
       </div>
   );
 }
